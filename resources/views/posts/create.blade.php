@@ -7,7 +7,9 @@
       <h1>Create New Posts</h1>
       <hr>
       <form method="POST" action="{{ route('posts.store')}}">
-      {{csrf_field()}}
+
+        {{ csrf_field() }}
+
         <div class="form-group">
           <label for="usr">Title</label>
           <input type="text" class="form-control" id="title" name="title" required>

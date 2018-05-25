@@ -21,7 +21,7 @@
                 <thead>
                     <th>#</th>
                     <th>Title</th>
-                    <th>content</th>
+                    <th>Content</th>
                     <th>Created At</th>
                     <th></th>
                 </thead>

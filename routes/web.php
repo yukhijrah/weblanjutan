@@ -28,7 +28,7 @@ Route::get('/contact', function () {
 
 Auth::routes();
 
-//Route::resource('posts', 'PostController');
+// Route::resource('posts', 'PostController');
 
 Route::get('posts', 'PostController@index')->name('posts.index');
 Route::post('posts', 'PostController@store')->name('posts.store');

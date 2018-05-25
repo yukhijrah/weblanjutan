@@ -47,20 +47,21 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title'=>"required",
-            'content'=>"required"
+            'title' => 'required',
+            'content'=> 'required'
         ]);
 
         $post = new Post();
-        $post -> title = $request->title;
-        $post -> content = $request->content;
-        $post -> image = 'Image';
-        $post -> author = $request->user()->name;
-        $post -> save();
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->image = 'Image';
+        $post->author = $request->user()->name;
+        $post->save();
 
-        if($post->save()){
+        if($post->save()) {
             return redirect()->route('posts.index');
         }
+
     }
 
     /**
@@ -71,7 +72,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return view('posts.show');
+        $post = Post::find($id);
+        return view('posts.show',compact('post'));
     }
 
     /**
@@ -82,6 +84,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        $post = Post::find($id);
         return view('posts.edit');
     }
 
